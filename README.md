@@ -1,2 +1,4 @@
 # Java
-This repository contains algorithm exercises in java.
+This repository contains 
+  - Algorithm exercises in java.
+  - POO course.
