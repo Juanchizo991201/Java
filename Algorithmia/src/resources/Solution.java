@@ -1,5 +1,6 @@
 package resources;
 
+import java.lang.reflect.Array;
 import java.util.*;
 import java.util.stream.IntStream;
 
@@ -88,23 +89,6 @@ public class Solution {
             }
         }
         return false;//
-    }
-
-    public void merge(int[] nums1, int m, int[] nums2, int n) {
-
-        int[] firstSubArray = Arrays.copyOf(nums1, m);
-        int[] secondSubArray = Arrays.copyOf(nums2, n);
-
-        int[] finalArray = new int[m + n];
-
-        System.arraycopy(firstSubArray, 0, finalArray, 0, m);
-        System.arraycopy(secondSubArray, 0, finalArray, m, n);
-
-        Arrays.sort(finalArray);
-        nums1 = nums2 = finalArray;
-
-        System.out.println(Arrays.toString(nums1));
-        System.out.println(Arrays.toString(nums2));
     }
 
     public boolean isPalindrome(String s) {
@@ -204,7 +188,7 @@ public class Solution {
                 break;
             }
 
-            currentNode.next = lists[minIndex]; 
+            currentNode.next = lists[minIndex];
             currentNode = currentNode.next;
             lists[minIndex] = lists[minIndex].next;
         }
@@ -287,7 +271,81 @@ public class Solution {
                 return new int[]{firstIndex, lastIndex};
             }
         }
+        return new int[]{-1, -1};
+    }
 
-        return new int[]{-1,-1};
+    public int searchInsert(int[] nums, int target) {
+
+        int position = Arrays.binarySearch(nums, target);
+
+        return position >= 0 ? position : Math.abs(position) - 1;
+    }
+
+    public int climbStairs(int n) {
+
+        ArrayList<Integer> possibilities = new ArrayList<>();
+
+        if (n == 1) {
+            return 1;
+        } else if (n == 2) {
+            return 2;
+        }
+
+        int[] dp = new int[n + 1];
+        dp[1] = 1;
+        dp[2] = 2;
+
+        for (int i = 3; i <= n; i++) {
+            dp[i] = dp[i - 1] + dp[i - 2];
+        }
+
+        return dp[n];
+    }
+
+    public int mySqrt(int x) {
+        return (int) Math.sqrt(x);
+    }
+
+    public int lengthOfLastWord(String s) {
+
+        String[] words = s.split(" ");
+        if (words.length == 0) {
+            return 0;
+        }
+
+        return words[words.length - 1].length();
+    }
+
+    public int[] plusOne(int[] digits) {
+
+        if (digits[digits.length - 1] < 9) {
+            digits[digits.length - 1]++;
+            return digits;
+        }
+
+        int[] newDigits = new int[digits.length + 1];
+        System.arraycopy(digits, 0, newDigits, 0, digits.length);
+        newDigits[digits.length - 1] = 1;
+        newDigits[digits.length] = 0;
+        return newDigits;
+    }
+
+    public void merge(int[] nums1, int m, int[] nums2, int n) {
+        for (int j = 0, i = m; j < n; j++, i++) {
+            nums1[i] = nums2[j];
+        }
+        Arrays.sort(nums1);
+    }
+
+    public boolean containsNearbyDuplicate(int[] nums, int k) {
+
+        for (int i = 0; i < nums.length; i++) {
+            for (int j= i + 1; j <= i + k; j++) {
+                if(j<nums.length && nums[i] == nums[j]) {
+                    return true;
+                }
+            }
+        }
+        return false;
     }
 }

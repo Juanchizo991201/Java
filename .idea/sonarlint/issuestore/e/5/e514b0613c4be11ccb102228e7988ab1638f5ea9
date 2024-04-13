@@ -1,0 +1,9 @@
+
+]
+java:S1220""Move this file to a named package.8ëºè¯í1J$add988ff-1df1-44a0-bea9-9b9c67bcc1a5
+m	java:S106"+Replace this use of System.out by a logger.(ç–¼ø8ì¨…Âí1J$6d29c352-bbf2-431a-8c78-368222ccc46e
+r	java:S106"+Replace this use of System.out by a logger.(½Òñ¢ùÿÿÿÿ8³Å…Âí1J$2bc8a7ac-596d-4c9a-ac0c-053ea97dcd0a
+}
+java:S1128"5Remove this unused import 'resources.DataStructures'.(Á˜Çøÿÿÿÿ8ÛõíÁí1J$22de29bf-60ca-4d6b-be58-69a27cd301ab
+w
+java:S1128"/Remove this unused import 'resources.ListNode'.(ˆİùÑıÿÿÿÿ8ÜõíÁí1J$c1fc62b2-b009-4526-bb05-5c2188a0baf3

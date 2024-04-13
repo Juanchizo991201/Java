@@ -1,0 +1,18 @@
+
+›	java:S135>"YReduce the total number of break and continue statements in this loop to use at most one.(÷˜Ñÿ8£·¤Âí1J$9c285fd6-744f-4755-a785-6d7d5330f8fe
+˜
+java:S1149"PReplace the synchronized class "Stack" by an unsynchronized one such as "Deque".(ÑÖÙƒýÿÿÿÿ8ð¸¤Âí1J$2b461254-9fda-4f5b-aebc-06c24d0f4bc7
+•
+java:S37761"RRefactor this method to reduce its Cognitive Complexity from 17 to the 15 allowed.(ûÕ‘Ñ8ö¸¤Âí1J$79503557-b1d2-4798-b803-65b11a7abdc9
+”
+java:S1871B"LThis branch's code block is the same as the block for the branch on line 63.(Ó¥˜¬üÿÿÿÿ8ø¸¤Âí1J$f43ffd2c-e59b-4916-97b2-f9fe1ace6561
+r	java:S106b"+Replace this use of System.out by a logger.(Å­ËÝúÿÿÿÿ8û¸¤Âí1J$88a34cf2-fec2-40bd-828d-5f2bba504e4f
+~	java:S125a"<This block of commented-out lines of code should be removed.(°Ë•Ó8ü¸¤Âí1J$bd94f455-67d7-4d28-81b2-42214a2f4dab
+r	java:S106f"+Replace this use of System.out by a logger.(§÷ŽÉûÿÿÿÿ8ý¸¤Âí1J$dd2d8a7c-beac-4d5b-adac-9b3df5914d70
+r	java:S106z"+Replace this use of System.out by a logger.(Å´§¡ýÿÿÿÿ8ƒ¹¤Âí1J$ad19680f-d026-4478-8205-d9f8ed08bcfe
+j
+java:S1905Õ"&Remove this unnecessary cast to "int".(¶¸òÚ8‹¹¤Âí1J$03334fed-71d5-4e8e-bffc-53339cff9e3b
+…
+java:S1854ž"ARemove this useless assignment to local variable "possibilities".(«‰Ù¦8”¹¤Âí1J$6bd40894-d770-42c8-9f5e-6a34712200fb
+v
+java:S1481ž"2Remove this unused "possibilities" local variable.(«‰Ù¦8–¹¤Âí1J$16504eb4-b70b-4b80-80d3-8bbb88201508

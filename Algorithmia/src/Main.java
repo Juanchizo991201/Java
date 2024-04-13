@@ -1,3 +1,4 @@
+import resources.DataStructures;
 import resources.Solution;
 
 import java.lang.reflect.Array;
@@ -9,8 +10,8 @@ public class Main {
 
         Solution solution = new Solution();
 
-        System.out.println((Array.get(solution.twoSum(new int[]{2, 7, 11, 15}, 9), 0)));
-
+        System.out.println(solution.containsNearbyDuplicate(new int[]{1,2,3,3,2}, 3));
+        System.out.println(solution.containsNearbyDuplicate(new int[]{99,99}, 2));
     }
 
 }
