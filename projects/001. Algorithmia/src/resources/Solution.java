@@ -340,12 +340,125 @@ public class Solution {
     public boolean containsNearbyDuplicate(int[] nums, int k) {
 
         for (int i = 0; i < nums.length; i++) {
-            for (int j= i + 1; j <= i + k; j++) {
-                if(j<nums.length && nums[i] == nums[j]) {
+            for (int j = i + 1; j <= i + k; j++) {
+                if (j < nums.length && nums[i] == nums[j]) {
                     return true;
                 }
             }
         }
         return false;
+    }
+
+    public double myPow(double x, int n) {
+        return Math.pow(x, n);
+    }
+
+    public int findMaxSubarraySum(int[] intArray) {
+
+        int maxSum = 0;
+
+        for (int i = 0; i < intArray.length - 1; i++) {
+            if (intArray[i] >= 0) {
+//                System.out.println("pivote: " + intArray[i]);
+                int localMaxSum = intArray[i];
+                for (int j = i + 1; j < intArray.length; j++) {
+                    if (intArray[j] > 0) {
+//                        System.out.println("**SUMA** el siguiente es mayor a 0: " + intArray[j]);
+                        localMaxSum += intArray[j];
+//                        System.out.println("sumaLocal: " + localMaxSum);
+                        if (localMaxSum > maxSum) {
+//                            System.out.println("La suma local es mayor a la global " + localMaxSum + ">" + maxSum + " estableciendo nueva suma global...");
+                            maxSum = localMaxSum;
+                        }
+                    } else {
+                        break;
+                    }
+
+                }
+            } else {
+//                System.out.println("numero pivote menor a 0 " + intArray[i]);
+            }
+            if (intArray[i] > maxSum) {
+                maxSum = intArray[i];
+            }
+
+        }
+        return maxSum;
+    }
+
+    public int bitwiseComplement(int n) {
+        String binary = convertDecimalToBinary(n);
+        String[] array = binary.split("");
+        StringBuilder sb = new StringBuilder();
+
+        for (int i = 0; i < array.length; i++) {
+            if (array[i].equals("0")) {
+                sb.append("1");
+            } else {
+                sb.append("0");
+            }
+        }
+
+        return binaryToDecimal(sb.toString());
+    }
+
+    public static String convertDecimalToBinary(int decimal) {
+        if (decimal == 0) {
+            return "0";
+        }
+
+        StringBuilder binary = new StringBuilder();
+        while (decimal > 0) {
+            int remainder = decimal % 2;
+            binary.insert(0, remainder); // Insert remainder at the beginning
+            decimal /= 2; // Divide decimal by 2
+        }
+
+        return binary.toString();
+    }
+
+    public static int binaryToDecimal(String binaryString) {
+        int decimal = 0;
+        int length = binaryString.length();
+        for (int i = 0; i < length; i++) {
+            char digit = binaryString.charAt(i);
+            // Check if the character is '1', if true, add the corresponding power of 2 to the decimal
+            if (digit == '1') {
+                decimal += Math.pow(2, length - i - 1);
+            } else if (digit != '0') {
+                // Handle invalid characters
+                System.err.println("Invalid binary number: " + binaryString);
+                System.exit(1);
+            }
+        }
+        return decimal;
+    }
+
+    public static int simpleArraySum(List<Integer> ar) {
+        return ar.stream().mapToInt(Integer::intValue).sum();
+    }
+
+    public static void minMaxSum(List<Integer> arr) {
+
+        List<Integer> integerList = new ArrayList<>();
+
+
+
+
+        int minsum = 0;
+        int maxsum = 0;
+
+        Collections.sort(integerList);
+
+        System.out.println(integerList);
+
+    }
+
+    public  static void staircase(int n) {
+        for (int i = 1; i <= n; i++) {
+            String spaces = " ".repeat(n - i);
+            String hashes = "#".repeat(i);
+            System.out.println(spaces + hashes);
+        }
     }
 }
